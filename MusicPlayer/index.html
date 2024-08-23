@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="details">
+                <div class="now-playing">PLAYING x OF y</div>
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                 <input type="range" min="1" mar="100" value="0" class="seek_slider" onchange="seekTo()">
+                 <div class="total-duration">00:00</div>
+                 <audio></audio>
+            </div>
+
+    
+            <div class="slider_container">
+                <ion-icon name="volume-low"></ion-icon>
+                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                <ion-icon name="volume-high"></ion-icon>
+            </div>
+
+            <div class="buttons">
+                <div class="random-track" onclick="randomTrack()">
+                    <ion-icon name="shuffle" title="random"></ion-icon>
+                </div>
+                <div class="prev-track" onclick="prevTrack()">
+                    <ion-icon name="play-skip-back"></ion-icon>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <ion-icon name="play-circle"></ion-icon>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <ion-icon name="play-skip-forward"></ion-icon>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()">
+                    <ion-icon name="repeat" title="repeat"></ion-icon>
+                </div>
+            </div>
+
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- ionicons script -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- main script -->
+     <script src="app.js"></script>
+
+</body>
+</html>
